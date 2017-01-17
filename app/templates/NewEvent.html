@@ -1,0 +1,26 @@
+
+<div class="container">
+    <div>
+        <h1>New Event</h1>
+        <hr/>
+        <form name="newEventForm">
+            <fieldset>
+                <label for="eventName">Event Name:</label>
+                <input id="eventName" type="text" required ng-model="event.name" placeholder="Name of your Event.."/>
+                <label for="eventDate">Event Date:</label>
+                <input id="eventDate" type="text" required ng-model="event.date" ng-pattern="/\d\d/\d\d/\d\d\d\d/" placeholder="mm/dd/yyyy"/>
+            </fieldset>
+            <br/>
+            <br/>
+
+            <button type="submit" class="btn" ng-disabled="newEventForm.$invalid" ng-click="saveEvent(event, newEventForm)">Save</button>
+            <button type="cancel" class="btn" ng-click="cancelEdit()">Cancel</button>
+            <button type="cancel" class="btn" ng-click="reload()">Reload</button>
+        </form>
+
+        <div>
+            {{event.name}}
+        </div>
+    </div>
+
+</div>

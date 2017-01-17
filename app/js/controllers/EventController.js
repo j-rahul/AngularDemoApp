@@ -19,8 +19,10 @@ eventsApp.controller('EventController',
                 $scope.event = event;
             })
             .error(function(data, status, headers, config){
-                    $log.warn(data, status, headers(), config)
+                $log.warn(data, status, headers(), config)
             });
+
+        $scope.resEvent = eventData.getResourceServiceEvent();
 
     }
 );

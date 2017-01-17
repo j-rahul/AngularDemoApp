@@ -29,6 +29,20 @@
          duration: {{module.duration | durations}}
      </li>
 
+     <div>
+         <h2 ng-style="myStyle" ng-bind="resEvent.name"></h2>
+         <h2 ng-class="myClass" ng-bind-template="{{resEvent.name | uppercase}} {{resEvent.date}}"></h2>
+         {{resEvent.date}} <br/>
+         {{resEvent.time}}
+         <hr/>
+         <h3>Sessions</h3>
+         <li ng-repeat="resModule in resEvent.events | orderBy:sortOrder">
+             {{resModule.name}} <br/>
+             duration: {{resModule.duration | durations}}
+         </li>
+     </div>
+
+
      <button class="btn" ng-disabled="myButton">button</button>
      <div>{{1+2}}</div>
      <div ng-non-bindable>{{1+2}}</div>
@@ -43,6 +57,7 @@
 <script src="/lib/jquery.min.js"></script>
 <script src="/lib/angular/angular.js"></script>
 <script src="/lib/angular/angular-sanitize.js"></script>
+<script src="/lib/angular/angular-resource.js"></script>
 <script src="/lib/underscore-1.4.4.min.js"></script>
 <script src="/js/app.js"></script>
 <script src="/js/services/EventData.js"></script>
